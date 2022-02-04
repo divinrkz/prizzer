@@ -13,7 +13,7 @@ using namespace std;
 
 class NetworkTools {
    private:
-        string ip_address;
+        char* ip_address;
         
         static void check_host_name(int hostname) {
             if (hostname == -1) {
@@ -29,7 +29,7 @@ class NetworkTools {
         }
 
     public:
-         static string getIPAddress() {
+         static char* getIPAddress() {
             char host[256];
             struct hostent *host_entry;
             int hostname;
