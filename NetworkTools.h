@@ -41,12 +41,12 @@ class NetworkTools {
             char *IP;
             struct hostent *host_entry;
             int hostname;
+
             hostname = gethostname(host, sizeof(host)); //find the host name
             check_host_name(hostname);
             host_entry = gethostbyname(host); //find host information
             check_host_entry(host_entry);
-            IP = inet_ntoa(*((struct in_addr*) host_entry->h_addr_list[0])); //Convert into IP string
-            printf("Host IP: %s\n", IP);
+            
             return inet_ntoa(*((struct in_addr*) host_entry->h_addr_list[0]));;
         }
 };

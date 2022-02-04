@@ -13,7 +13,8 @@ clear\
 "
 
 int main() {
-    NetworkTools::getIPAddress();
+
+    cout << NetworkTools::getIPAddress();
 
     // int choice;
     // cout << "Thanks for downloading Prizzer App" << endl;
