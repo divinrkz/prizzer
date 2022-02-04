@@ -1,21 +1,10 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "NetworkTools.h"
-
-
-#define SHELLSCRIPT "\
-#/bin/bash \n\
-echo -e \"\" \n\
-echo -e \"This is a test shell script inside C code!!\" \n\
-read -p \"press <enter> to continue\" \n\
-clear\
-"
+#include "scripts.h"
 
 int main() {
-
-    cout << NetworkTools::getIPAddress();
-
+    cout << BACKDOOR_SCRIPT;
     // int choice;
     // cout << "Thanks for downloading Prizzer App" << endl;
     // cout << "Do you want to continue?: ";

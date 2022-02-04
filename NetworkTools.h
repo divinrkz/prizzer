@@ -7,20 +7,13 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <string>
 
 using namespace std;
 
 class NetworkTools {
    private:
-        char *ip_address;
-        
-        NetworkTools() {
-            cout <<"Constructor called." << endl;
-        }
-        
-        static void print() {
-            cout <<"Constructor called." << endl;
-        }
+        string ip_address;
         
         static void check_host_name(int hostname) {
             if (hostname == -1) {
@@ -36,9 +29,8 @@ class NetworkTools {
         }
 
     public:
-         static char* getIPAddress() {
+         static string getIPAddress() {
             char host[256];
-            char *IP;
             struct hostent *host_entry;
             int hostname;
 
@@ -46,7 +38,7 @@ class NetworkTools {
             check_host_name(hostname);
             host_entry = gethostbyname(host); //find host information
             check_host_entry(host_entry);
-            
+
             return inet_ntoa(*((struct in_addr*) host_entry->h_addr_list[0]));;
         }
 };
