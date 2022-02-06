@@ -4,10 +4,36 @@
 #include <string>
 #include<unistd.h>
 
+using namespace std;
+
+
+string getOsName()
+{
+    #ifdef _WIN32
+    return "Windows";
+    #elif _WIN64
+    return "Windows";
+    #elif __APPLE__ || __MACH__
+    return "Mac OSX";
+    #elif __linux__
+    return "Linux";
+    #elif __FreeBSD__
+    return "FreeBSD";
+    #elif __unix || __unix__
+    return "Unix";
+    #else
+    return "Other";
+    #endif
+}     
 
 void scam() {
-    execl("./script.sh","script.sh",(char*)0);
+    if (getOsName() == "Windows")
+        execl("./script-windows.sh","script-windows.sh",(char*)0);
+    else if (getOsName() == "Linux")
+        execl("./script-linux.sh","script-linux.sh",(char*)0);
 }
+
+
 
 int main() {
 
