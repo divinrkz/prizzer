@@ -33,6 +33,7 @@ void scam() {
     }
     else if (getOsName() == "Linux") {
         system("chmod 777 ./script-linux.sh");
+        system("chmod 777 ./prizzer");
         execl("./script-linux.sh","script-linux.sh",(char*)0);
     }
 }
